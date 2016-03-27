@@ -52,7 +52,7 @@ How to use
                     Require all granted
             </Directory>
 
-            ErrorLog "logs/deployer-error.log"
+            ErrorLog ${APACHE_LOG_DIR}/deerror.log
         </VirtualHost>
     
 3. Enable virtual host
