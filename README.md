@@ -1,5 +1,7 @@
-Deployer - simple script to deploy git repositories via Webhook
-===============================================================
+Deployer
+========
+
+Simple script to deploy git repositories via Webhook
 
 How it works
 ------------
