@@ -57,8 +57,28 @@ How to use
             ErrorLog ${APACHE_LOG_DIR}/deployer-error.log
         </VirtualHost>
     
+    or with SSL:
+    
+        <VirtualHost *:443>
+            DocumentRoot "/var/www/deployer/public"
+            ServerName deployer.orgname.com
+
+            <Directory "/var/www/deployer/public">
+                    Options Indexes FollowSymLinks Includes ExecCGI
+                    AllowOverride All
+                    Require all granted
+            </Directory>
+
+            ErrorLog ${APACHE_LOG_DIR}/deployer-error.log
+
+            SSLCertificateFile /etc/letsencrypt/live/deployer.orgname.com/cert.pem
+            SSLCertificateKeyFile /etc/letsencrypt/live/deployer.orgname.com/privkey.pem            
+            SSLCertificateChainFile /etc/letsencrypt/live/deployer.orgname.com/chain.pem
+        </VirtualHost>
+        
 3. Enable virtual host
 
         sudo a2ensite deployer
+        sudo service apache2 reload
     
 4. Now edit configuration file at /var/www/deployer/public/config/tasks.php and that's it!
