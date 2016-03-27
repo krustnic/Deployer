@@ -32,19 +32,19 @@ if ( isset($task["custom-command"]) && $task["custom-command"] != "" ) {
 //
 
 if ( !isset($config['git-path']) || !file_exists($config['git-path']) ) {
-    response(500, "Git path not exist: ".$config['git-path']);    
+    response(500, "Git path does not exist: ".$config['git-path']);    
 }
  
 if ( !isset($task['git-dir']) || !file_exists($task['git-dir']) ) {
-    response(500, "Git-dir path not exist: ".$task['git-dir']);    
+    response(500, "Git-dir path does not exist: ".$task['git-dir']);    
 }
 
 if ( !isset($task['work-tree']) || !file_exists($task['work-tree']) ) {
-    response(500, "Git work-tree path not exist: ".$task['work-tree']);    
+    response(500, "Git work-tree path does not exist: ".$task['work-tree']);    
 }
 
 if ( !isset($task['branch']) || $task['branch'] == "" ) {
-    response(500, "No branch specified!");    
+    response(500, "No branch is specified!");    
 }
 
 // Run git fetch/reset
