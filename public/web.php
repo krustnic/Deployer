@@ -95,7 +95,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                         $("#task-response-content").html( response.responseText );
                         $("#task-response-div").show();
 
-                        swal('Task is complited!');
+                        swal('Task is completed!');
                     });
                 })
             });

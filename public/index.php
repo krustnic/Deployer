@@ -53,4 +53,3 @@ if ( !isset($task['branch']) || $task['branch'] == "" ) {
 $cmd = "{$config['git-path']} --git-dir={$task['git-dir']} --work-tree={$task['work-tree']} fetch --all && {$config['git-path']} --git-dir={$task['git-dir']} --work-tree={$task['work-tree']} reset --hard {$task['branch']}";
 $output = shell_exec( $cmd );
 response(200, $output);
-?>
