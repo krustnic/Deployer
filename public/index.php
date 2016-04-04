@@ -12,9 +12,11 @@ $password = isset($_GET["password"]) ? $_GET["password"] : "";
 
 // Get task name from GET parameters of Webhook
 $taskName = isset($_GET["task"]) ? $_GET["task"] : "";
-               
+
+// Redirect to web administration panel if no task specified
 if ( !isset($config["tasks"][$taskName]) ) {
-    response(500, "Unknown task name: ".$taskName);    
+    header("Location: /panel.php");
+    exit;
 }
 //
                                                         
