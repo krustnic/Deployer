@@ -1,18 +1,24 @@
 <?php
 
-if (!isset($_SERVER['PHP_AUTH_USER'])) {
+function responseBasicAuth() {
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
-    echo 'Текст, отправляемый в том случае,
-    если пользователь нажал кнопку Cancel';
+
+    echo "You should specify login/password from config file. Reload page and try again.";
     exit;
+}
+
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+    responseBasicAuth();
 } else {
     $config = require( "./config/tasks.php" );
     
     $username = $_SERVER['PHP_AUTH_USER'];
     $password = $_SERVER['PHP_AUTH_PW'];
     
-    //if ( $username != $config["username"] || $password != $config["password"] ) exit("Bad credentials");
+    if ( $username != $config["username"] || $password != $config["password"] ) {
+        responseBasicAuth();
+    };
 }
 
 ?>
