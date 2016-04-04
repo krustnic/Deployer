@@ -5,7 +5,7 @@ function response( $status, $message ) {
     exit;
 }
 
-$config = require("./config/tasks.example.php");
+$config = require("./config/tasks.php");
 
 // Get user password
 $password = isset($_GET["password"]) ? $_GET["password"] : "";

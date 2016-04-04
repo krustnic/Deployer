@@ -11,7 +11,7 @@ function responseBasicAuth() {
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     responseBasicAuth();
 } else {
-    $config = require("./config/tasks.example.php");
+    $config = require("./config/tasks.php");
     
     $username = $_SERVER['PHP_AUTH_USER'];
     $password = $_SERVER['PHP_AUTH_PW'];
