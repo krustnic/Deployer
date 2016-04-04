@@ -15,7 +15,7 @@ $taskName = isset($_GET["task"]) ? $_GET["task"] : "";
 
 // Redirect to web administration panel if no task specified
 if ( !isset($config["tasks"][$taskName]) ) {
-    header("Location: /panel.php");
+    header("Location: /web.php");
     exit;
 }
 //
