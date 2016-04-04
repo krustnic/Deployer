@@ -89,7 +89,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                         type : "POST",
                         url : taskUrl
                     }).always(function( response ) {
-                        $("#task-response-content").html( response.responseText );
+                        $("#task-response-content").html( response.responseText ? response.responseText : response );
                         $("#task-response-div").show();
 
                         swal('Task is completed!');
