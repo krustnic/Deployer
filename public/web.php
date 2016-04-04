@@ -26,17 +26,14 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">   
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/0.4.5/sweetalert2.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/sweetalert2.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/sweetalert2/0.4.5/sweetalert2.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="libs/jquery-2.2.2.min.js"></script>
+    <script src="libs/sweetalert2.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container" style="margin-top:50px;">
