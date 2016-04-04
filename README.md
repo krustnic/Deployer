@@ -1,7 +1,7 @@
 Deployer
 ========
 
-Simple script to deploy git repositories via Webhook
+Simple script to deploy git repositories via Webhook or web-interface.
 
 How it works
 ------------
@@ -18,14 +18,19 @@ Example webhook url:
 Configuration example:
 
     [
+        // Username and password for web panel
+        "username" => "deployer",
+        "password" => "password",
+
         "git-path" => "/usr/bin/git", // Path to git command
         "tasks"    => [
             // Task name. Would be used in GET parameter in Webhook URL
             "task1" => [
-                "password"  => "password",                                  
-                "branch"    => "origin/master", // Branch name to hard reset from            
-                "git-dir"   => "/var/www/site1/.git", // Path to .git of your project (.git is included)            
-                "work-tree" => "/var/www/site1", // Path to your project files (in 99% cases it's a previous path without ".git"),
+                "description" => "",
+                "password"    => "password",
+                "branch"      => "origin/master", // Branch name to hard reset from
+                "git-dir"     => "/var/www/site1/.git", // Path to .git of your project (.git is included)
+                "work-tree"   => "/var/www/site1", // Path to your project files (in 99% cases it's a previous path without ".git"),
 
                 "custom-command" => "" // If set - would be executed instead of default git fetch/reset commands
             ]
@@ -39,7 +44,7 @@ How to use
 
         cd /var/www
         git clone https://github.com/krustnic/Deployer.git
-    
+
 2. Create new virtual host
 
     sudo nano /etc/apache2/sites-available/deployer.conf
@@ -80,5 +85,12 @@ How to use
 
         sudo a2ensite deployer
         sudo service apache2 reload
-    
-4. Now edit configuration file at /var/www/deployer/public/config/tasks.php and that's it!
+
+4. Create new tasks.php file: `cp config/tasks.example.php config/tasks.php`
+
+5. Now edit configuration file at /var/www/deployer/public/config/tasks.php and that's it!
+
+Web Interface
+-------------
+
+Web interface is available on "/" url with empty task name or on "/web".
